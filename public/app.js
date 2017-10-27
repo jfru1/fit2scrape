@@ -13,17 +13,17 @@ $.getJSON("/articles", function(data) {
   for (var i = 0; i < data.length; i++) {
     //build important info on page
     $("#articles").append("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + data[i].link + "</p>");
-    var newButton = $("<button/>")
-    newButton.attr("class", "saveArticle")
-    newButton.attr("dataId", data[i]._id)
-    newButton.text("Save Article")
-    $("#articles").append(newButton)
+    var nButton = $("<button/>")
+    nButton.attr("class", "saveArticle")
+    nButton.attr("dataId", data[i]._id)
+    nButton.text("Save Article")
+    $("#articles").append(nButton)
     $("#articles").append(`<form> <input type='text' id = 'postComment' name='comment'><br> <input type='submit' value = 'Post' id ='submitComment' dataId = ${data[i]._id}  </form>`)
-    var newViewPost = $("<button/>")
-    newViewPost.attr("class", "viewPost")
-    newViewPost.attr("dataId", data[i]._id)
-    newViewPost.text("View Comments")
-    $("#articles").append(newViewPost)
+    var nViewPost = $("<button/>")
+    nViewPost.attr("class", "viewPost")
+    nViewPost.attr("dataId", data[i]._id)
+    nViewPost.text("View Comments")
+    $("#articles").append(nViewPost)
   }
       });
     });

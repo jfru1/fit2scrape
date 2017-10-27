@@ -33,8 +33,8 @@ db.once("open", function() {
 
 //this creates a new note and passes it to req.body. checks itself for any errors. checks for updates 
 app.post("/articles/:id", function(req, res) {
-  var newNote = new Note(req.body);
-  newNote.save(function(error, doc) {
+  var nNote = new Note(req.body);
+  nNote.save(function(error, doc) {
     if (error) {
       console.log(error);
     }
@@ -54,8 +54,8 @@ app.post("/articles/:id", function(req, res) {
 
 //essentially same as above, but for saved stuff
 app.post("/saved/:id", function(req, res) {
-  var newNote = new Note(req.body);
-  newNote.save(function(error, doc) {
+  var nNote = new Note(req.body);
+  nNote.save(function(error, doc) {
     if (error) {
       console.log(error);
     }
@@ -117,8 +117,8 @@ app.get("/articles/:id", function(req, res) {
 
 //creates a new note or replaces a note made by user attached to an article. uses id to track where note belongs
 app.post("/articles/:id", function(req, res) {
-  var newNote = new Note(req.body);
-  newNote.save(function(error, doc) {
+  var nNote = new Note(req.body);
+  nNote.save(function(error, doc) {
     if (error) {
       console.log(error);
     }
